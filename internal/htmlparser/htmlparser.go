@@ -8,7 +8,7 @@ import (
 )
 
 // Get raw HTML data from .html file
-func getHTMLNodeFromFile(htmlFilePath string) (*html.Node, error) {
+func GetHTMLNodeFromFile(htmlFilePath string) (*html.Node, error) {
 	// open HTML file
 	htmlFile, err := os.Open(htmlFilePath)
 	if err != nil {
@@ -24,17 +24,25 @@ func getHTMLNodeFromFile(htmlFilePath string) (*html.Node, error) {
 	return result, nil
 }
 
-// Get all hrefs of <a> of html file
-func GetAllHrefsFromFile(htmlFilePath string) ([]string, error) {
-	var result []string
-
-	// get html.Node
-	node, errN := getHTMLNodeFromFile(htmlFilePath)
-	if errN != nil {
-		return nil, fmt.Errorf("failed to get html.Node from file(%s):\n\t%v", errN)
+// Process node
+func processNodeByTag(n *html.Node) (string, error) {
+	if n.FirstChild != nil {
+		fmt.Println("Name:", n.FirstChild.Data)
+		return n.FirstChild.Data, nil
 	}
 
-	func(n *html.Node)
+	return "", fmt.Errorf("???")
+}
+
+// Get all hrefs of <a> of html file
+func GetAllHrefsFromFile(n *html.Node) ([]string, error) {
+	var result []string
+
+	var processAll func(n *html.Node) {
+		if n.Type == html.ElementNode && n.Data == "a" {
+			processNodeByTag(n)
+		}
+	} 
 
 	return result, nil
 }

@@ -1,6 +1,6 @@
-# Exercise #4: HTML Link Parser
+<h2>This is the fork of Gophersises "HTML Link Parser" exercise by Jon Calhoun</h2>
 
-[![exercise status: released](https://img.shields.io/badge/exercise%20status-released-green.svg?style=for-the-badge)](https://gophercises.com/exercises/link)
+https://courses.calhoun.io/lessons/les_goph_16
 
 ## Exercise details
 

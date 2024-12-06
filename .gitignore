@@ -4,7 +4,7 @@
 # except
 !cmd/html-link-parser.go
 !html-examples/*.html
-!internal/*
+!internal/htmlparser/htmlparser.go
 !.gitignore
 !go.mod
 !README.md
